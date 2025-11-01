@@ -1,4 +1,3 @@
-import React from 'react';
 import Hero from './components/Hero';
 import Problems from './components/Problems';
 import Services from './components/Services';
