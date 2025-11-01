@@ -1,0 +1,10 @@
+/* Custom styles for the landing page */
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
