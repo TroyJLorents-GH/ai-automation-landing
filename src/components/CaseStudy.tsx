@@ -21,12 +21,12 @@ const CaseStudy: React.FC = () => {
                   SUCCESS STORY
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                  Local Dental Practice Saves 25 Hours Per Week
+                  Arizona State University HR: 80% Workload Reduction
                 </h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  A busy dental practice with 35 employees was drowning in appointment scheduling,
-                  patient follow-ups, and insurance verification calls. Their front desk staff was
-                  overwhelmed, leading to long wait times and frustrated patients.
+                  The largest school within Arizona State University needed to process 900 student
+                  offer letters each semester. Their HR team was spending 200-280 hours manually
+                  creating documents, checking for errors, and managing the hiring workflow.
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -35,8 +35,8 @@ const CaseStudy: React.FC = () => {
                       ✓
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Automated Scheduling</h4>
-                      <p className="text-gray-600 text-sm">AI handles 80% of appointment bookings and reminders</p>
+                      <h4 className="font-semibold text-gray-900">Document Automation</h4>
+                      <p className="text-gray-600 text-sm">Adobe Sign & DocuSign integration for automated offer letter generation</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -44,8 +44,8 @@ const CaseStudy: React.FC = () => {
                       ✓
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Patient Follow-ups</h4>
-                      <p className="text-gray-600 text-sm">Automated post-appointment emails and satisfaction surveys</p>
+                      <h4 className="font-semibold text-gray-900">Real-Time Dashboard</h4>
+                      <p className="text-gray-600 text-sm">Live tracking of student hiring status with automated manager notifications</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -53,25 +53,31 @@ const CaseStudy: React.FC = () => {
                       ✓
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Insurance Verification</h4>
-                      <p className="text-gray-600 text-sm">Automated insurance checks before appointments</p>
+                      <h4 className="font-semibold text-gray-900">Automated Reports & Storage</h4>
+                      <p className="text-gray-600 text-sm">Form fields auto-saved to reports with organized folder structures</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-xl">
                   <p className="text-gray-600 italic mb-4">
-                    "This has been transformative for our practice. Our staff can now focus on
-                    providing excellent patient care instead of being stuck on the phone all day.
-                    Patient satisfaction is up, and we're seeing fewer no-shows."
+                    "Working for the largest school within Arizona State University, we send out 900 student
+                    offer letters each semester. Troy automated the entire hiring process with the click of a
+                    button. Offer letters are generated with the correct information—spelling and numeric errors
+                    are no longer an issue—and sent out automatically once completed. The offer letters are saved
+                    into specific folder structures and database reports. All managers receive multiple automated,
+                    tailored emails. Troy created an HR dashboard that's updated in real time, showing the current
+                    status of where each student is in the hiring process. Reports that once took weeks, if not
+                    months, to put together can now be downloaded at any point. This process used to take 200-280
+                    hours—after the automation, our workload was cut by 80%."
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                      DM
+                      MS
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">Dr. Michael Chen</div>
-                      <div className="text-sm text-gray-600">Practice Owner</div>
+                      <div className="font-semibold text-gray-900">Maddie Small</div>
+                      <div className="text-sm text-gray-600">HR Manager, Arizona State University</div>
                     </div>
                   </div>
                 </div>
@@ -80,31 +86,35 @@ const CaseStudy: React.FC = () => {
               <div className="flex flex-col justify-center">
                 <div className="bg-white p-8 rounded-xl shadow-lg mb-6">
                   <div className="text-center mb-6">
-                    <h4 className="text-2xl font-bold text-gray-900 mb-2">Results After 3 Months</h4>
+                    <h4 className="text-2xl font-bold text-gray-900 mb-2">Measurable Results</h4>
                   </div>
                   <div className="space-y-6">
                     <div className="border-l-4 border-green-500 pl-4">
-                      <div className="text-4xl font-bold text-green-600 mb-1">25 hrs</div>
-                      <div className="text-gray-700 font-medium">Saved per week</div>
+                      <div className="text-4xl font-bold text-green-600 mb-1">80%</div>
+                      <div className="text-gray-700 font-medium">Workload reduction per semester</div>
+                      <div className="text-sm text-gray-500 mt-1">200-280 hrs → 40-56 hrs</div>
                     </div>
                     <div className="border-l-4 border-blue-500 pl-4">
-                      <div className="text-4xl font-bold text-blue-600 mb-1">40%</div>
-                      <div className="text-gray-700 font-medium">Reduction in no-shows</div>
+                      <div className="text-4xl font-bold text-blue-600 mb-1">900</div>
+                      <div className="text-gray-700 font-medium">Offer letters automated</div>
+                      <div className="text-sm text-gray-500 mt-1">Each semester, automatically</div>
                     </div>
                     <div className="border-l-4 border-purple-500 pl-4">
-                      <div className="text-4xl font-bold text-purple-600 mb-1">95%</div>
-                      <div className="text-gray-700 font-medium">Patient satisfaction</div>
+                      <div className="text-4xl font-bold text-purple-600 mb-1">$25K</div>
+                      <div className="text-gray-700 font-medium">Saved from error prevention</div>
+                      <div className="text-sm text-gray-500 mt-1">Caught overpayment issues</div>
                     </div>
                     <div className="border-l-4 border-orange-500 pl-4">
-                      <div className="text-4xl font-bold text-orange-600 mb-1">$2,800</div>
-                      <div className="text-gray-700 font-medium">Monthly cost savings</div>
+                      <div className="text-4xl font-bold text-orange-600 mb-1">$50K</div>
+                      <div className="text-gray-700 font-medium">Saved annually on staffing</div>
+                      <div className="text-sm text-gray-500 mt-1">No additional hires needed</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-xl text-center">
-                  <div className="text-3xl font-bold mb-2">ROI: 350%</div>
-                  <div className="text-green-100">First-year return on investment</div>
+                  <div className="text-3xl font-bold mb-2">$75K+ Total Savings</div>
+                  <div className="text-green-100">Annual cost reduction from automation</div>
                 </div>
               </div>
             </div>
