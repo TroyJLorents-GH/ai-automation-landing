@@ -24,9 +24,9 @@ const CaseStudy: React.FC = () => {
                   Arizona State University HR: 80% Workload Reduction
                 </h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  The largest school within Arizona State University needed to process 900 student
-                  offer letters each semester. Their HR team was spending 200-280 hours manually
-                  creating documents, checking for errors, and managing the hiring workflow.
+                  Fulton Schools of Engineering, ASU's largest school, processes 900+ student offer letters
+                  each semester. Their HR team was spending 200-280 hours manually creating documents,
+                  checking for errors, and managing the hiring workflow.
                 </p>
 
                 <div className="space-y-4 mb-8">
