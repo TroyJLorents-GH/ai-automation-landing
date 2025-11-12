@@ -76,7 +76,7 @@ const CaseStudy: React.FC = () => {
                       MS
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">Maddie Small</div>
+                      <div className="font-semibold text-gray-900">Maddie S.</div>
                       <div className="text-sm text-gray-600">HR Manager, Arizona State University</div>
                     </div>
                   </div>
