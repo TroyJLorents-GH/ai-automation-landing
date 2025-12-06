@@ -1,32 +1,42 @@
 import type { Handler, HandlerEvent } from "@netlify/functions";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
-// Automation plans - monthly subscriptions only
-const AUTOMATION_PRICES: Record<string, string> = {
-  starter: process.env.STRIPE_PRICE_STARTER || "",
-  professional: process.env.STRIPE_PRICE_PROFESSIONAL || "",
-};
-
-// AI Agent plans - one-time build fee + monthly maintenance
-// Each plan needs TWO price IDs: one for setup, one for monthly
-const AGENT_PRICES: Record<string, { setup: string; monthly: string }> = {
-  agent_lite: {
-    setup: process.env.STRIPE_PRICE_AGENT_LITE_SETUP || "",
-    monthly: process.env.STRIPE_PRICE_AGENT_LITE_MONTHLY || "",
-  },
-  agent_starter: {
-    setup: process.env.STRIPE_PRICE_AGENT_STARTER_SETUP || "",
-    monthly: process.env.STRIPE_PRICE_AGENT_STARTER_MONTHLY || "",
-  },
-  agent_professional: {
-    setup: process.env.STRIPE_PRICE_AGENT_PRO_SETUP || "",
-    monthly: process.env.STRIPE_PRICE_AGENT_PRO_MONTHLY || "",
-  },
-};
-
 const handler: Handler = async (event: HandlerEvent) => {
+  // Initialize Stripe inside the handler to ensure env vars are available
+  const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+  
+  if (!stripeSecretKey) {
+    console.error("STRIPE_SECRET_KEY is not configured");
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: "Stripe is not configured" }),
+    };
+  }
+
+  const stripe = new Stripe(stripeSecretKey);
+
+  // Automation plans - monthly subscriptions only
+  const AUTOMATION_PRICES: Record<string, string> = {
+    starter: process.env.STRIPE_PRICE_STARTER || "",
+    professional: process.env.STRIPE_PRICE_PROFESSIONAL || "",
+  };
+
+  // AI Agent plans - one-time build fee + monthly maintenance
+  const AGENT_PRICES: Record<string, { setup: string; monthly: string }> = {
+    agent_lite: {
+      setup: process.env.STRIPE_PRICE_AGENT_LITE_SETUP || "",
+      monthly: process.env.STRIPE_PRICE_AGENT_LITE_MONTHLY || "",
+    },
+    agent_starter: {
+      setup: process.env.STRIPE_PRICE_AGENT_STARTER_SETUP || "",
+      monthly: process.env.STRIPE_PRICE_AGENT_STARTER_MONTHLY || "",
+    },
+    agent_professional: {
+      setup: process.env.STRIPE_PRICE_AGENT_PRO_SETUP || "",
+      monthly: process.env.STRIPE_PRICE_AGENT_PRO_MONTHLY || "",
+    },
+  };
+
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -37,13 +47,17 @@ const handler: Handler = async (event: HandlerEvent) => {
   try {
     const { planId, planType, customerEmail } = JSON.parse(event.body || "{}");
 
-    const siteUrl = process.env.URL || "http://localhost:8888";
+    console.log("Checkout request:", { planId, planType });
+
+    const siteUrl = process.env.URL || "https://automateflows.io";
 
     let session: Stripe.Checkout.Session;
 
     // Handle Automation plans (subscription only)
     if (planType === "automation") {
       const priceId = AUTOMATION_PRICES[planId];
+
+      console.log("Automation plan:", { planId, priceId });
 
       if (!priceId) {
         return {
@@ -77,6 +91,8 @@ const handler: Handler = async (event: HandlerEvent) => {
     // Handle AI Agent plans (one-time setup + monthly subscription)
     else if (planType === "agent") {
       const agentPrices = AGENT_PRICES[planId];
+
+      console.log("Agent plan:", { planId, agentPrices });
 
       if (!agentPrices || !agentPrices.setup || !agentPrices.monthly) {
         return {
