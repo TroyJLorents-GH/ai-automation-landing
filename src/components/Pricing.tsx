@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { loadStripe } from '@stripe/stripe-js';
 
 // Initialize Stripe - you'll set this in your environment variables
@@ -246,10 +247,29 @@ const Pricing: React.FC = () => {
   };
 
   return (
-    <section id="pricing" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+    <section id="pricing" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl opacity-50" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-50 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl opacity-50" />
+
+      <div className="container mx-auto px-6 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4"
+          >
+            Pricing
+          </motion.span>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-4">
             Simple, Transparent Pricing
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
@@ -257,39 +277,45 @@ const Pricing: React.FC = () => {
           </p>
 
           {/* Tab Switcher */}
-          <div className="inline-flex bg-gray-200 rounded-xl p-1.5 mb-8 flex-wrap justify-center">
-            <button
+          <div className="inline-flex bg-gray-100 rounded-2xl p-1.5 mb-8 flex-wrap justify-center shadow-sm">
+            <motion.button
               onClick={() => setActiveTab('automation')}
-              className={`px-5 py-3 rounded-lg font-semibold transition-all ${
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                 activeTab === 'automation'
                   ? 'bg-white text-blue-600 shadow-md'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
               🔄 Automation
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => setActiveTab('agents')}
-              className={`px-5 py-3 rounded-lg font-semibold transition-all ${
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                 activeTab === 'agents'
                   ? 'bg-white text-purple-600 shadow-md'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
               🤖 AI Agents
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => setActiveTab('custom')}
-              className={`px-5 py-3 rounded-lg font-semibold transition-all ${
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                 activeTab === 'custom'
                   ? 'bg-white text-emerald-600 shadow-md'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
               🛠️ Build Your Own
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
 
         {error && (
           <div className="max-w-md mx-auto mb-8 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-center">

@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Problems from './components/Problems';
+import TrustLogos from './components/TrustLogos';
 import Services from './components/Services';
-import HowItWorks from './components/HowItWorks';
+import Problems from './components/Problems';
 import CaseStudy from './components/CaseStudy';
+import HowItWorks from './components/HowItWorks';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -44,14 +46,19 @@ function App() {
     return <Success />;
   }
 
-  // Show main landing page
+  // Show main landing page with optimized section order:
+  // Hero → TrustLogos → Services → Problems → CaseStudy → HowItWorks → Pricing → Contact → Footer
+  // This order leads with what you do (services), connects pain points, proves with case study,
+  // explains process, then pricing to convert
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
+      <Navbar />
       <Hero />
-      <Problems />
+      <TrustLogos />
       <Services />
-      <HowItWorks />
+      <Problems />
       <CaseStudy />
+      <HowItWorks />
       <Pricing />
       <Contact />
       <Footer />
