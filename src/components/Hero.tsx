@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
       },
     },
   };
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.4,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
       },
     },
   };
