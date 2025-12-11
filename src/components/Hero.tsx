@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
-      <div className="container mx-auto px-6 py-24 md:py-32">
+      <div className="container mx-auto px-6 py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Save 20+ Hours Every Week with AI-Powered Automation
