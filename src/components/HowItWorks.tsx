@@ -52,8 +52,8 @@ const HowItWorks: React.FC = () => {
 
   return (
     <section id="howitworks" className="pt-16 pb-24 bg-gradient-to-b from-gray-50 to-blue-50 relative overflow-hidden scroll-mt-20">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+      {/* Background decoration - hidden to avoid line between cards */}
+      {/* <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" /> */}
       
       <div className="container mx-auto px-6 relative">
         <motion.div
@@ -91,12 +91,12 @@ const HowItWorks: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative"
+                  className="relative h-full"
                 >
                   {/* Card */}
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+                    className="bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col"
                   >
                     <div className="flex items-start gap-4">
                       {/* Step number & icon */}
