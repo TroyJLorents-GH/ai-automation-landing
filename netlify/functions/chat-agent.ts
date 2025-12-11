@@ -53,13 +53,14 @@ const handler: Handler = async (event: HandlerEvent) => {
 
     // Log for debugging (remove later)
     console.log("Calling endpoint:", endpoint);
+    console.log("Request payload:", JSON.stringify({ input: messages, stream: false }, null, 2));
+    console.log("API key prefix:", apiKey.substring(0, 10) + "...");
 
     const response = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "api-key": apiKey,
-        "Authorization": `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
         input: messages,
