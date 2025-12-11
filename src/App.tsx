@@ -10,6 +10,7 @@ import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Success from './components/Success';
+import ChatWidget from './components/ChatWidget';
 import './App.css';
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
       <Pricing />
       <Contact />
       <Footer />
+      <ChatWidget />
     </div>
   );
 }

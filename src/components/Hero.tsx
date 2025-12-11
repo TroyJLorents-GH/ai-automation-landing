@@ -235,21 +235,6 @@ const Hero: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2"
-          >
-            <motion.div className="w-1.5 h-1.5 bg-white/60 rounded-full" />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
