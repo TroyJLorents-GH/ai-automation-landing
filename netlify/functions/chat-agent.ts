@@ -137,7 +137,7 @@ When appropriate, encourage users to book a free 15-minute consultation to discu
 
     // Log for debugging (remove later)
     console.log("Calling endpoint:", endpoint);
-    console.log("Request payload:", JSON.stringify({ messages: messages, max_tokens: 800, temperature: 1.0 }, null, 2));
+    console.log("Request payload:", JSON.stringify({ messages: messages, max_completion_tokens: 800, temperature: 1.0 }, null, 2));
     console.log("API key prefix:", apiKey.substring(0, 10) + "...");
 
     const response = await fetch(endpoint, {
@@ -148,7 +148,7 @@ When appropriate, encourage users to book a free 15-minute consultation to discu
       },
       body: JSON.stringify({
         messages: messages,
-        max_tokens: 800,
+        max_completion_tokens: 800, // GPT-5.1-chat uses max_completion_tokens instead of max_tokens
         temperature: 1.0, // Required for GPT-5.1-chat
       }),
     });
