@@ -1,3 +1,4 @@
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Problems from './components/Problems';
 import Services from './components/Services';
@@ -11,6 +12,7 @@ import './App.css';
 function App() {
   return (
     <div className="min-h-screen">
+      <Navbar />
       <Hero />
       <Problems />
       <Services />
