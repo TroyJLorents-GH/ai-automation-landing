@@ -51,11 +51,15 @@ const handler: Handler = async (event: HandlerEvent) => {
       { role: "user", content: message }
     ];
 
+    // Log for debugging (remove later)
+    console.log("Calling endpoint:", endpoint);
+
     const response = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "api-key": apiKey,
+        "Authorization": `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
         input: messages,
