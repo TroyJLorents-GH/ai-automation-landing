@@ -104,7 +104,7 @@ const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
+    <section id="services" className="pt-16 pb-24 bg-white relative overflow-hidden scroll-mt-20">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-50 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl opacity-50" />

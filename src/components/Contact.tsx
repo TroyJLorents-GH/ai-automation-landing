@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
   const inputClasses = "w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white outline-none transition-all duration-200 text-gray-900 placeholder-gray-400";
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="contact" className="pt-16 pb-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden scroll-mt-20">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 w-96 h-96 bg-blue-50 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl opacity-50" />
       

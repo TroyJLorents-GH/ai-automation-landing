@@ -72,7 +72,7 @@ const Problems: React.FC = () => {
   };
 
   return (
-    <section id="problems" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section id="problems" className="pt-16 pb-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden scroll-mt-20">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-dots-pattern opacity-30" />
       

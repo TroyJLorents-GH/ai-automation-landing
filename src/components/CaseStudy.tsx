@@ -17,7 +17,7 @@ const CaseStudy: React.FC = () => {
   };
 
   return (
-    <section id="casestudy" className="py-24 bg-white relative overflow-hidden">
+    <section id="casestudy" className="pt-16 pb-24 bg-white relative overflow-hidden scroll-mt-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -86,8 +87,14 @@ const ChatWidget: React.FC = () => {
       {/* Chat Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-lg flex items-center justify-center text-white hover:shadow-xl transition-shadow"
-        whileHover={{ scale: 1.05 }}
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600 rounded-full shadow-lg flex items-center justify-center text-white hover:shadow-xl transition-all duration-300"
+        style={{
+          boxShadow: isOpen
+            ? '0 4px 20px rgba(102, 126, 234, 0.4)'
+            : '0 4px 20px rgba(102, 126, 234, 0.4), 0 0 30px rgba(102, 126, 234, 0.3), 0 0 60px rgba(118, 75, 162, 0.2)',
+          animation: isOpen ? 'none' : 'pulse-glow 2s ease-in-out infinite',
+        }}
+        whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
@@ -146,10 +153,30 @@ const ChatWidget: React.FC = () => {
                     className={`max-w-[80%] px-4 py-2 rounded-2xl text-sm ${
                       msg.role === 'user'
                         ? 'bg-blue-600 text-white rounded-br-md'
-                        : 'bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md'
+                        : 'bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md chat-markdown'
                     }`}
                   >
-                    <p className="whitespace-pre-wrap">{msg.content}</p>
+                    {msg.role === 'user' ? (
+                      <p className="whitespace-pre-wrap">{msg.content}</p>
+                    ) : (
+                      <ReactMarkdown
+                        components={{
+                          p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                          strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+                          em: ({ children }) => <em className="italic">{children}</em>,
+                          ul: ({ children }) => <ul className="list-disc list-inside mb-2 space-y-1">{children}</ul>,
+                          ol: ({ children }) => <ol className="list-decimal list-inside mb-2 space-y-1">{children}</ol>,
+                          li: ({ children }) => <li className="ml-1">{children}</li>,
+                          a: ({ href, children }) => (
+                            <a href={href} className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                              {children}
+                            </a>
+                          ),
+                        }}
+                      >
+                        {msg.content}
+                      </ReactMarkdown>
+                    )}
                   </div>
                 </div>
               ))}

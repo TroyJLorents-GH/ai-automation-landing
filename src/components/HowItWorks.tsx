@@ -51,7 +51,7 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section id="howitworks" className="py-24 bg-gradient-to-b from-gray-50 to-blue-50 relative overflow-hidden">
+    <section id="howitworks" className="pt-16 pb-24 bg-gradient-to-b from-gray-50 to-blue-50 relative overflow-hidden scroll-mt-20">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
       

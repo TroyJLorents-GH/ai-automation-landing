@@ -247,7 +247,7 @@ const Pricing: React.FC = () => {
   };
 
   return (
-    <section id="pricing" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section id="pricing" className="pt-16 pb-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden scroll-mt-20">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl opacity-50" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-50 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl opacity-50" />
