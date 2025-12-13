@@ -55,6 +55,7 @@ const handler: Handler = async (event: HandlerEvent) => {
 - Guide visitors through our offerings and how we can help them
 - Explain how automation can solve common business pain points
 - Encourage visitors to book a free consultation
+- Keep responses focused and do not overload with unnecessary details and lengthy responses
 
 ## Do NOT offer the following services:
 - Image generation of any kind
