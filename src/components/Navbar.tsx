@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
               }`}
             >
               <span className="text-blue-500">Automate</span>
-              <span>Flows</span>
+              <span className="ml-1">Flows</span>
             </a>
 
             {/* Desktop Navigation */}
