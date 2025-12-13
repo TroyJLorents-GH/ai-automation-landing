@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-6 pt-32 pb-20 md:pt-40 md:pb-32">
+      <div className="relative container mx-auto px-6 pt-28 pb-8 md:pt-32 md:pb-12">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -212,7 +212,7 @@ const Hero: React.FC = () => {
           {/* Trust Badges */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap justify-center gap-6 md:gap-10"
+            className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12"
           >
             {[
               { icon: '✓', text: 'No Long-Term Contracts' },
@@ -232,6 +232,27 @@ const Hero: React.FC = () => {
                 <span className="text-sm md:text-base">{badge.text}</span>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2 }}
+            className="flex flex-col items-center mt-10"
+          >
+            <span className="text-white/40 text-xs mb-2">Scroll to explore</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2"
+            >
+              <motion.div
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                className="w-1.5 h-1.5 bg-white/60 rounded-full"
+              />
+            </motion.div>
           </motion.div>
         </motion.div>
 
